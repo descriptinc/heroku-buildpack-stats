@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir> <env-dir>
 
+indent() {
+  sed -u 's/^/       /'
+}
+
 BUILD_DIR=$1
 
-du -csh $BUILD_DIR/.[!.]* $BUILD_DIR/*
+pushd $BUILD_DIR
+du -csh .[!.]* * | indent
+popd
