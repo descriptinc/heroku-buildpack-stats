@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir> <env-dir>
 
-du -csh .[!.]* *
+BUILD_DIR=$1
+
+du -csh $BUILD_DIR/.[!.]* $BUILD_DIR/*
